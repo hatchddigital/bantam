@@ -34,7 +34,7 @@ module.exports = function (grunt) {
         }
     });
 
-    // Add typescript support
+    // Scripts
     ext.configure({
         typescript: {
             coop: {
@@ -62,22 +62,31 @@ module.exports = function (grunt) {
     });
     ext.registerTask('scripts', ['typescript:coop']);
 
-    // Examples
+    // Html
     ext.configure({
         jade: {
-            samples: {
+            html: {
                 files: [
                     {
                         expand: true,
                         src: ['html/**/*.jade'],
-                        dest: 'libs/empty-coop/static/libs',
+                        dest: 'libs/empty-coop/static',
                         ext: '.html'
                     }
                 ]
             }
+        },
+        watch: {
+            html: {
+                files: ['html/**/*.jade'],
+                tasks: ['html'],
+                options: {
+                    spawn: true
+                }
+            }
         }
     });
-    ext.registerTask('samples', ['jade:coop']);
+    ext.registerTask('html', ['jade:html']);
 
     // Development mode
     ext.configure({
@@ -85,7 +94,7 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     port: 3000,
-                    base: 'lib/empty-coop/static'
+                    base: 'libs/empty-coop/static'
                 }
             }
         }

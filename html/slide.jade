@@ -1,0 +1,74 @@
+style
+    | .slider { width: 800px; overflow: hidden; }
+    | .slider-item { display: inline-block; }
+    | .slide-control { padding: 5px; border-radius: 3px; background: #efefef; cursor: pointer; margin: 0px 15px 0px 0px; display: inline-block; }
+    | iframe { width: 100px; height: 100px; }
+
+//-
+//- Slider component
+//- (Called image gallery in wires)
+//-
+//- Slider group
+mixin slider
+    .slider.slide
+        ul.slider-items.slide-items
+            block
+        ul.slider-controls.slide-controls
+            li.slider-controls-control.slide-control.slide-prev Prev
+            li.slider-controls-control.slide-control.slide-next Next
+
+//- Slider item
+mixin slideritem(type)
+    li(class="slider-item slide-item" data-mediatype="#{type}")
+        block
+
+//- Slider item: text
+mixin slideritem-text
+    //- Set media type to pass to slideritem mixin
+    -var type = 'text'
+    //- Define markup
+    +slideritem(type)
+        block
+
+//- Slider item: video
+mixin slideritem-video(media,caption)
+    //- Set media type to pass to slideritem mixin
+    -var type = 'video'
+    //- Set default values for args
+    -var media = media || 'gWOGy6LEhC4'
+    -var caption = caption || 'Video caption'
+    //- Define markup
+    +slideritem(type)
+        iframe(width="200" height="400" src="//www.youtube.com/embed/#{media}" frameborder="0" allowfullscreen)
+        -if (caption)
+            p.slider-item-caption
+                | #{caption}
+
+//- Slider item: image
+mixin slideritem-img(media,caption)
+    //- Set media type to pass to slideritem mixin
+    -var type = 'image'
+    //- Set default values for args
+    -var media = media || 'http://placekitten.com/200/100'
+    -var caption = caption || 'Image caption'
+    //- Define markup
+    +slideritem(type)
+        img(src="#{media}" alt="Alt text")
+        -if (caption)
+            p.slider-item-caption
+                | #{caption}
+
+//- Demo the markup
+h3 Slider component
++slider
+    +slideritem-text
+        h4 title
+        p Lorem ipsum Amet ex ut ut dolore commodo ullamco anim dolor voluptate enim. Lorem ipsum Dolore mollit labore ex aliqua ad sed in ullamco commodo ex.
+    +slideritem-video
+    +slideritem-img
+    +slideritem-img
+    +slideritem-img
+    +slideritem-img('http://placekitten.com/201/101','Caption')
+    +slideritem-img('http://placekitten.com/202/102','Another image caption')
+
+script(data-main="../scripts/app" src="../libs/requirejs/require.js")
