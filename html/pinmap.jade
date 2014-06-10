@@ -1,0 +1,17 @@
+html
+    head
+        title
+        | Hatchling: Pinmap/title
+    body
+        div.wrapper
+            hgroup
+                h1
+                | Pinmap
+            section.examples
+                div.pinmap
+
+        |- // Should be moved into require AMD mode.
+        script(src="http://maps.googleapis.com/maps/api/js?sensor=false")
+        script(src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js")
+
+        script(data-main="../scripts/app" src="../libs/requirejs/require.js")

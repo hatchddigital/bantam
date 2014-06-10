@@ -15,6 +15,7 @@
   ],
   "devDependencies": {
     "empty-coop": "hatchddigital/empty-coop#~0.6.0",
-    "slide": "hatchddigital/slide#~0.2.6"
+    "slide": "hatchddigital/slide#~0.2.6",
+    "pinmap": "hatchddigital/pinmap#~2.3.2"
   }
 }

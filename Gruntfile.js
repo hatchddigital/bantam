@@ -52,7 +52,7 @@ module.exports = function (grunt) {
         },
         watch: {
             typescript: {
-                files: ['scripts/**/*.ts'],
+                files: ['defs/**/*', 'scripts/**/*.ts'],
                 tasks: ['scripts'],
                 options: {
                     spawn: true

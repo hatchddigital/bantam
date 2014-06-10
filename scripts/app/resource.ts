@@ -1,11 +1,5 @@
-/// <reference path="../../defs/jquery/jquery.d.ts"/>
-/// <reference path="../../defs/slide/slide.d.ts"/>
 import things = require('./things');
-import slide = require('slide');
-import $ = require('jquery');
-
-//((...r:any[]) => {})(slide);
-
-
-$('.slide').slide();
+import slide = require('./samples/slide');
+import pinmap = require('./samples/pinmap');
+((...r:any[]) => {})(slide, pinmap);
 things.test();
