@@ -7,7 +7,9 @@ declare var require;
 require.config({
     paths: {
         jquery: '../libs/jquery/dist/jquery',
-        slide: '../libs/slide/dist/slide.min'
+        slide: '../libs/slide/dist/slide.min',
+        pinmap: '../libs/pinmap/dist/pinmap.min',
+        async: '../libs/requirejs-plugins/src/async'
     }
 });
 

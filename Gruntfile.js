@@ -21,11 +21,11 @@ module.exports = function (grunt) {
     // Setup eggbox
     registerCoopTasks(grunt);
     ext.configure({
-        copy: {
+        copyto: {
             coop: {
                 files: [
                     {
-                        expand: true,
+                        cwd: '.',
                         src: ['libs/**/*', '!libs/empty-coop/*'],
                         dest: 'libs/empty-coop/static'
                     }
@@ -102,6 +102,6 @@ module.exports = function (grunt) {
 
     // Load grunt configuration
     ext.initConfig(grunt);
-    grunt.registerTask('default', ['copy:coop', 'scripts', 'empty-coop-default']);
+    grunt.registerTask('default', ['copyto:coop', 'scripts', 'empty-coop-default']);
     grunt.registerTask('development', ['default', 'connect', 'watch']);
 };

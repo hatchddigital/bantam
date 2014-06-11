@@ -5,12 +5,8 @@ interface JQuery {
     slide(options?:any):void;
 }
 
-// Declare an external module, to import slide using AMD.
-// NB. You still need to setup require.js to find the bower module.
-declare module slide {
-    export function dummy():void;
-}
-
+// Export a dummy implementation for AMD
 declare module "slide" {
-    export = slide;
+    function dummy():void;
+    export = dummy;
 }
