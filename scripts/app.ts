@@ -6,13 +6,13 @@ declare var require;
 // Setup paths
 require.config({
     paths: {
-        jquery: '../libs/jquery/dist/jquery',
+        jquery: '../libs/jquery/jquery',
         slide: '../libs/slide/dist/slide.min',
         pinmap: '../libs/pinmap/dist/pinmap.min',
+        tabbed: '../libs/tabbed/dist/tabbed.min',
         async: '../libs/requirejs-plugins/src/async'
     }
 });
 
 // Bootstrap application
-require(['main'], function () {
-});
+require(['main'], function () {});

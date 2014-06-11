@@ -1,3 +1,3 @@
-import resource = require('./app/resource');
-import breakpoints = require('./app/breakpointguide');
-((...r:any[]) => {})(resource, breakpoints);
+/// <amd-dependency path="./app/resource"/>
+/// <amd-dependency path="./app/breakpointguide"/>
+import dummy = require('./main');

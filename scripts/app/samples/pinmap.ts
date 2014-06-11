@@ -7,8 +7,6 @@
 declare var PopupSlider;
 import $ = require('jquery');
 
-console.log("Oh hi, maps are ready now");
-
 // Initalize map plugin
 var options = {
     latitude: -31.999069,
