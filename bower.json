@@ -1,7 +1,7 @@
 {
   "name": "bamtam",
-  "version": "0.1.0",
-  "homepage": "https://github.com/shadowmint/bamtam",
+  "version": "0.1.1",
+  "homepage": "https://github.com/hatchddigital/bantam",
   "authors": [
     "doug <linderd@iinet.net.au>"
   ],
@@ -14,8 +14,8 @@
     "tests"
   ],
   "devDependencies": {
-    "empty-coop": "hatchddigital/empty-coop#~0.6.0",
-    "slide": "hatchddigital/slide#~0.2.7",
+    "empty-coop": "hatchddigital/empty-coop#~0.7.7",
+    "slide": "hatchddigital/slide#~0.2.11",
     "pinmap": "hatchddigital/pinmap#~2.3.2",
     "requirejs-plugins": "~1.0.2",
     "tabbed": "hatchddigital/tabbed#~0.1.1"
